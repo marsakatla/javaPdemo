@@ -7,15 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="loginServlet method="post"></form>
+<form action="LoginServlet" method="post">
 <div id = "top" style=height:100px></div>
 <div id = "middle" style = height:250px;border:solid>
 <center><h1> Login</h1>
 username <input type="text" name="uid"/><br><br>
 password<input type ="Password" name="pwd"/><br><br>
-<input type="button" value="submit" style="border:solid;font-weight: bold;">&emsp;
-<input type="button" value="clear" style="border:solid;font-weight: bold;">&emsp;
-<input type="button"value="cancle"style="border:solid;font-weight: bold;"></center></div>
+<input type="submit" value="submit" style="border:solid;font-weight: bold;">&emsp;
+<input type="reset" value="clear" style="border:solid;font-weight: bold;">&emsp;
+<input type="reset"value="cancle"style="border:solid;font-weight: bold;"></center></div>
 <div id="bottom"></center></div>
+</form>
 </body>
 </html>

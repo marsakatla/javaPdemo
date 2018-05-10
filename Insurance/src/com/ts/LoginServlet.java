@@ -45,16 +45,16 @@ public class LoginServlet extends HttpServlet {
 		{
 			out.print("sorry username and password error!");
 			RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
-			
+			rd.include(request,response);
 		}else
 		{
 			if(role.equals("user"))
 			{
-				
+				response.sendRedirect("Mainmenu_user.jsp");
 			}
 			else if(role.equals("admin"))
 			{
-				
+				response.sendRedirect("Mainmenu_admin.jsp");
 			}
 		}
 		
