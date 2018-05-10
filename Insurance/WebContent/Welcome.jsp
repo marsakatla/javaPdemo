@@ -9,7 +9,7 @@
 </style>
 </head>
 <body>
-<div id ="top" style =height:50px boader></div>
+<div id ="top" style =height:50px ></div>
 <div id = "middle" style = height:250px;border:solid>
 <center>
 <h1><b>Welcome to Insurance Rating System</b></h1>
