@@ -40,15 +40,15 @@ public class LoginServlet extends HttpServlet {
 		String uid=request.getParameter("uid");
 		String pwd=request.getParameter("pwd");
 		String role=new InsuranceDAO().isUser(uid,pwd);
-		out.print("pass");
+		
 		if(role=="")
 		{
 			out.print("sorry username and password error!");
 			RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
 			rd.include(request,response);
 		}else
-		{
-			if(role.equals("user"))
+		{out.print(role);
+			if(role.equals("normal"))
 			{
 				response.sendRedirect("Mainmenu_user.jsp");
 			}
