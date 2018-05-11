@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class LoginServlet
@@ -39,20 +40,22 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		String uid=request.getParameter("uid");
 		String pwd=request.getParameter("pwd");
-		String role=new InsuranceDAO().isUser(uid,pwd);
+		UserBean details=new InsuranceDAO().isUser(uid,pwd);
 		
-		if(role=="")
+		if(details.getRole()=="")
 		{
 			out.print("sorry username and password error!");
 			RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
 			rd.include(request,response);
 		}else
-		{out.print(role);
-			if(role.equals("normal"))
+		{//out.print(details);
+			HttpSession session =request.getSession();
+			session.setAttribute("username", details.getUsername());
+			if(details.equals("normal"))
 			{
 				response.sendRedirect("Mainmenu_user.jsp");
 			}
-			else if(role.equals("admin"))
+			else if(details.equals("admin"))
 			{
 				response.sendRedirect("Mainmenu_admin.jsp");
 			}

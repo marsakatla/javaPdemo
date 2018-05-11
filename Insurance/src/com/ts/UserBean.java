@@ -17,6 +17,6 @@ public class UserBean
 	}
 	public void setRole(String role)
 	{
-		this.role = role;
+		this.role = role; 
 	}
 }
